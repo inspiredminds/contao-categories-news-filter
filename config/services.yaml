@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    contao_categories_news_filter.news_filter_event_listner:
+        class: InspiredMinds\ContaoCategoriesNewsfilter\EventListener\NewsFilterEventListener
+        arguments: ['@codefog_news_categories.news_criteria_builder']
+        tags: ['kernel.event_listener']
