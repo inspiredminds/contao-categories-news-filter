@@ -44,7 +44,8 @@
     "config": {
         "allow-plugins": {
             "contao-components/installer": true,
-            "php-http/discovery": false
+            "php-http/discovery": false,
+            "contao-community-alliance/composer-plugin": true
         }
     }
 }

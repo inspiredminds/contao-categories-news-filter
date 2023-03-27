@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Contao News Filter Event extension.
+ * This file is part of the Contao Categories News Filter extension.
  *
  * (c) inspiredminds
  *

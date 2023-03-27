@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Contao News Filter Event extension.
+ * This file is part of the Contao Categories News Filter extension.
  *
  * (c) inspiredminds
  *
@@ -22,7 +22,7 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create(ContaoCategoriesNewsFilterBundle::class)
+            BundleConfig::create(ContaoCategoriesNewsFilterBundle::class),
         ];
     }
 }
