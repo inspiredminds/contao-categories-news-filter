@@ -40,7 +40,13 @@ class NewsFilterEventListener
             throw new PageNotFoundException($e->getMessage());
         }
 
+        // If $criteria is null, no news are found. Thus force an empty result.
         if (null === $criteria) {
+            $event
+                ->addColumn('1=2')
+                ->stopPropagation()
+            ;
+
             return;
         }
 
