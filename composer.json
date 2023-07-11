@@ -25,7 +25,9 @@
     "require": {
         "php": ">=7.4",
         "codefog/contao-news_categories": "^3.0",
+        "contao/core-bundle": "^4.9 || ^5.0",
         "inspiredminds/contao-news-filter-event": "^1.1",
+        "symfony/config": "^4.4 || ^5.4 || ^6.2",
         "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.2",
         "symfony/http-kernel": "^4.4 || ^5.4 || ^6.2"
     },
@@ -38,14 +40,18 @@
         "contao-manager-plugin": "InspiredMinds\\ContaoCategoriesNewsfilter\\ContaoManager\\Plugin"
     },
     "require-dev": {
+        "contao/manager-plugin": "^2.12",
         "friendsofphp/php-cs-fixer": "^2.16 || ^3.0",
+        "maglnet/composer-require-checker": "^3.8",
         "rector/rector": "^0.14.5"
     },
     "config": {
         "allow-plugins": {
             "contao-components/installer": true,
             "php-http/discovery": false,
-            "contao-community-alliance/composer-plugin": true
-        }
+            "contao-community-alliance/composer-plugin": true,
+            "contao/manager-plugin": true
+        },
+        "sort-packages": true
     }
 }
