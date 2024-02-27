@@ -3,15 +3,19 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\Set\ValueObject\LevelSetList;
+use Rector\Php81\Rector\Array_\FirstClassCallableRector;
 
 return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->sets([__DIR__.'/vendor/contao/rector/config/contao.php']);
+
     $rectorConfig->paths([
-        __DIR__ . '/src',
+        __DIR__.'/src',
     ]);
 
-    // define sets of rules
-    $rectorConfig->sets([
-        LevelSetList::UP_TO_PHP_74
+    $rectorConfig->skip([
+        FirstClassCallableRector::class,
     ]);
+
+    $rectorConfig->parallel();
+    $rectorConfig->cacheDirectory(sys_get_temp_dir().'/rector_cache');
 };

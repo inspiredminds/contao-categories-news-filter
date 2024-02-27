@@ -5,9 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Contao Categories News Filter extension.
  *
- * (c) inspiredminds
- *
- * @license LGPL-3.0-or-later
+ * (c) INSPIRED MINDS
  */
 
 namespace InspiredMinds\ContaoCategoriesNewsfilter\ContaoManager;

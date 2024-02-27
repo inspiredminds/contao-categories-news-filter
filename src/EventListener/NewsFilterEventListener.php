@@ -5,9 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Contao Categories News Filter extension.
  *
- * (c) inspiredminds
- *
- * @license LGPL-3.0-or-later
+ * (c) INSPIRED MINDS
  */
 
 namespace InspiredMinds\ContaoCategoriesNewsfilter\EventListener;
@@ -16,14 +14,13 @@ use Codefog\NewsCategoriesBundle\Criteria\NewsCriteriaBuilder;
 use Codefog\NewsCategoriesBundle\Exception\CategoryNotFoundException;
 use Contao\CoreBundle\Exception\PageNotFoundException;
 use InspiredMinds\ContaoNewsFilterEvent\Event\NewsFilterEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
+#[AsEventListener]
 class NewsFilterEventListener
 {
-    private NewsCriteriaBuilder $criteriaBuilder;
-
-    public function __construct(NewsCriteriaBuilder $criteriaBuilder)
+    public function __construct(private readonly NewsCriteriaBuilder $criteriaBuilder)
     {
-        $this->criteriaBuilder = $criteriaBuilder;
     }
 
     public function __invoke(NewsFilterEvent $event): void
@@ -33,7 +30,7 @@ class NewsFilterEventListener
                 ->getCriteriaForListModule(
                     $event->getArchives(),
                     $event->getFeatured(),
-                    $event->getModule()
+                    $event->getModule(),
                 )
             ;
         } catch (CategoryNotFoundException $e) {
