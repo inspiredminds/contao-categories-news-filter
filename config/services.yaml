@@ -5,3 +5,4 @@ services:
 
     InspiredMinds\ContaoCategoriesNewsfilter\:
         resource: ../src
+        exclude: ../src/{ContaoManager,DependencyInjection,ContaoCategoriesNewsFilterBundle.php}

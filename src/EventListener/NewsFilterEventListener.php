@@ -38,7 +38,7 @@ class NewsFilterEventListener
         }
 
         // If $criteria is null, no news are found. Thus force an empty result.
-        if (null === $criteria) {
+        if (!$criteria) {
             $event
                 ->setForceEmptyResult(true)
                 ->stopPropagation()
